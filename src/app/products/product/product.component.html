@@ -1,0 +1,40 @@
+<div class="m-1" #indProduct>
+  <div class="card" style="width: 100% !important;">
+    <div class="card-body" [ngStyle]="{'font-size': productFontSize, 'padding': '1.1rem'}">
+      <div class="card-title">
+        <div class="mb-2 row">
+          <div class="col">
+            <span class="mr-2 text-muted">
+              <del>${{ product.realPrice }}</del>
+            </span><br>
+            <span style="font-style: bold;">${{ product.discountPrice }}</span>
+          </div>
+
+          <div class="col">
+            <button (click)="addToCart()" class="btn btn-sm" [ngStyle]="{'background-color': '#fff', 'border':'1px solid '+btnOutlineColor}">Add
+              to Cart</button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="card-text  text-center">
+        <img [src]="product.thumbnail" class="img-fluid" alt="image">
+      </div>
+
+      <div class="card-text  text-center text-truncate">{{ product.name }} >> {{ product.category }}</div>
+      <div class="row">
+        <div class="col">
+          <a href="#" class="btn btn-sm my-2" [ngStyle]="{'background-color': '#e1bee7', 'color':'#000'}">Open</a>
+        </div>
+        <div class="col">
+          <button (click)="addToWish()" class="btn btn-sm my-2" [ngStyle]="{'background-color': '#fff', 'border':'1px solid '+btnOutlineColor}">Wish</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

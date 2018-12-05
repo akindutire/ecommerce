@@ -1,0 +1,9 @@
+<nav class="navbar navbar-default" [ngClass]="{'fixed-top': enableFixedBottom()}" [ngStyle]="{'background-color': getHeaderBg(), 'color': getHeaderColor()}">
+    <div class="container-fluid clearfix">
+        <a href="#" [routerLink]="'/'" class="navbar-brand" [ngStyle]="{'color': getHeaderColor()}">zilCommerce</a>
+
+        <div class="pull-right ml-auto">
+            <app-notification></app-notification>
+        </div>
+    </div>
+</nav>

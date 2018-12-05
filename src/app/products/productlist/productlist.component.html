@@ -1,0 +1,32 @@
+<div *ngIf="productNotLoaded else productsView;" class="row">
+  <div class="container text-center">
+    <span>Loading...</span>
+  </div>
+
+</div>
+
+<ng-template #productsView>
+  <div class="row">
+    <div class="col-lg-2 col-md-3 d-none d-lg-block">
+      <app-category></app-category>
+    </div>
+    <div class="col-lg-10 col-md-12 col-sm-12 my-1">
+      <div class="container">
+        <div class="row pl-2">
+          <h4 class="display-4 mb-3">Products</h4>
+        </div>
+
+        <div class="row pl-2">
+          <div class="col-lg-3 col-md-4 col-sm-12" style="width: 1px solid red;" *ngFor="let productItem of products">
+
+            <app-product class="" [productItemContract]="productItem" [btnWidgetBgContract]="getbtnWidgetBg()"
+              [btnWidgetColorContract]="getbtnWidgetColor()"></app-product>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</ng-template>

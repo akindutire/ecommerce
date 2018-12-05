@@ -1,0 +1,29 @@
+<span *ngIf="!authValid else notification;">
+
+</span>
+
+<ng-template #notification>
+  <div class="row">
+    <div class="col-md-5 d-none d-md-block">
+      <form action="" class="form-inline">
+        <input type="search">
+        <button class="btn">Srch</button>
+      </form>
+    </div>
+
+    <div class="col-md-5">
+      <div class="d-inline">
+        <img [src]="currentUser.imagePath" alt="X" height='35px' width="35px" class="rounded-circle mr-1">
+        <span class="text-truncate">{{ currentUser.name }}</span>
+      </div>
+    </div>
+
+    <div class="col-md-1">
+      Cart {{ cart.totalAmount }}
+    </div>
+    <div class="col-md-1">
+      <span>Wish</span>
+      <span class="badge badge-light">{{ wishes.count }}</span>
+    </div>
+  </div>
+</ng-template>
